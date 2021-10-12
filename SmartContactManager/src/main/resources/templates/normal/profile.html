@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org"
+	th:replace="normal/base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+</head>
+<body>
+
+	<section>
+
+		<div class="card mr-3 ml-3">
+
+			<div class="card-body">
+
+				<div class="container text-center">
+
+					<img style="height: 200px; width: 200px;"
+						class="my_profile_picture"
+						th:src="@{'/img/user/' +${user.imageUrl}}" alt="" />
+
+					<h3 class="mt-3">
+						<span th:text="${user.name}"></span>
+					</h3>
+
+
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#ID</th>
+									<th scope="col">SCMUSER<span th:text="${user.id}"></span></th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">Email</th>
+									<td><span th:text="${user.email}"></span></td>
+
+								</tr>
+								<tr>
+									<th scope="row">Role</th>
+									<td><span th:text="${user.role}"></span></td>
+
+								</tr>
+
+								<tr>
+									<th scope="row">Active Status</th>
+									<td><span th:text="${user.enabled}"></span></td>
+
+								</tr>
+
+								<tr>
+									<th scope="row">About</th>
+									<td><span th:text="${user.about}"></span></td>
+
+								</tr>
+
+							</tbody>
+						</table>
+
+					</div>
+
+					<button th:onclick="|deleteuser(${user.id})|"
+						class="btn btn-danger btn-sm">Delete</button>
+					<button class="btn btn-primary btn-sm">Update</button>
+
+				</div>
+
+
+			</div>
+
+		</div>
+		
+			<script>	
+		$(document).ready(() => {
+		$('.item').removeClass("active");
+		$("#profile-link").addClass("active");
+		});
+		</script>
+		
+	</section>
+</body>
+</html>

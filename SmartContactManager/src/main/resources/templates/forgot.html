@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org"
+	th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+</head>
+<body>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+
+					<div class="account-wall">
+
+
+						<h3 class="text-center">Forgot Password</h3>
+
+						<div class="container text-center">
+							<div th:if="${session.message}"
+								th:classappend="${session.message.type}" class="alert"
+								role="alert">
+								<p class="text-center" th:text="${session.message.content}"></p>
+
+								<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+							</div>
+						</div>
+
+						<form class="form-signin" th:action="@{/send-otp}" method="post">
+
+							<input type="email" class="form-control"
+								placeholder="Enter Email" name="email" required autofocus>
+
+							<div class="container mt-3 text-center">
+								<button class="btn btn btn-warning " type="submit">
+									Send Otp</button>
+							</div>
+						</form>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
