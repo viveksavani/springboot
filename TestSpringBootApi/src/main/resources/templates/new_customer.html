@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+<title>Hello, world!</title>
+</head>
+<body>
+	<div class="container">
+
+		<form action="#" th:action="@{add}" th:object="${customer}"
+			method="post">
+			<div class="addstock">
+				<h1 class="text-center">Add Stocks</h1>
+				<br>
+				<div class="form-group">
+					<label for="formGroupExampleInput">Name</label> <input
+						type="text" class="form-control" th:field="*{name}"
+						placeholder="Enter Your  Name" />
+				</div>
+				<div class="form-group">
+					<label for="formGroupExampleInput">Gender</label> <input
+						type="text" class="form-control" th:field="*{gender}"
+						placeholder="Enter Your Gender" />
+				</div>
+
+				<div class="form-group">
+					<label for="formGroupExampleInput">Email</label> <input
+						type="text" class="form-control" th:field="*{email}"
+						placeholder="Enter Your Email " />
+				</div>
+
+				<div class="form-group">
+					<label for="formGroupExampleInput">Mobile No</label> <input
+						type="number" class="form-control" th:field="*{mobile}"
+						placeholder="Enter Your Mobile No " />
+				</div>
+
+				<div class="form-group">
+					<label for="formGroupExampleInput">Address Line1</label> <input
+						type="text" class="form-control" th:field="*{Addressline1}"
+						placeholder="Enter Your Address Line 1 " />
+				</div>
+
+				<div class="form-group">
+					<label for="formGroupExampleInput">Address Line2</label> <input
+						type="text" class="form-control" th:field="*{Addressline2}"
+						placeholder="Enter Your Address Line 2" />
+				</div>
+
+				<div class="form-group">
+					<label for="formGroupExampleInput">Country</label> <input
+						type="text" class="form-control" th:field="*{country}"
+						placeholder="Enter Your Country " />
+				</div>
+
+				<div class="form-group">
+					<label for="formGroupExampleInput">State</label> <input
+						type="text" class="form-control" th:field="*{state}"
+						placeholder="Enter Your State" />
+				</div>
+
+				<div class="form-group">
+					<label for="formGroupExampleInput">City</label> <input
+						type="text" class="form-control" th:field="*{city}"
+						placeholder="Enter Your City " />
+				</div>
+
+				<div class="form-group">
+					<label for="formGroupExampleInput">Zipcode</label> <input
+						type="number" class="form-control" th:field="*{zipcode}"
+						placeholder="Enter Your Zipcode" />
+				</div>
+				<div class="form-group">
+					<div class="container text-center">
+						<button type="submit" class="btn btn-outline-success ">Add
+							Stocks</button>
+					</div>
+				</div>
+		</form>
+	</div>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+</html>

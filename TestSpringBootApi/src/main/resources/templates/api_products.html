@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Products</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<table>
+
+	</table>
+
+	<!-- <tr th:each="ps : ${p}"> -->
+	<div class="container">
+
+		<h1 class="text-center">Products</h1>
+
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Title</th>
+					<th scope="col">Body_Html</th>
+					<th scope="col">vendor</th>
+					<th scope="col">product_type</th>
+					<th scope="col">created_at</th>
+					<th scope="col">handle</th>
+					<th scope="col">updated_at</th>
+					<th scope="col">published_at</th>
+					<th scope="col">template_suffix</th>
+					<th scope="col">published_scope</th>
+					<th scope="col">tags</th>
+					<th scope="col">admin_graphql_api_id</th>
+					<th scope="col">Image ID</th>
+					<th scope="col">Image Product ID</th>
+					<th scope="col">Image</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="p:${product}">
+					<th th:text="${p.id}">ID</th>
+					<td th:text="${p.title}">Name</td>
+					<td th:text="${p.body_html}">body_html</td>
+					<td th:text="${p.vendor}">vendor</td>
+					<td th:text="${p.product_type}">product_type</td>
+					<td th:text="${p.created_at}">created_at</td>
+					<td th:text="${p.handle}">handle</td>
+					<td th:text="${p.updated_at}">updated_at</td>
+					<td th:text="${p.published_at}">published_at</td>
+					<td th:text="${p.template_suffix}">template_suffix</td>
+					<td th:text="${p.published_scope}">published_scope</td>
+					<td th:text="${p.tags}">tags</td>
+					<td th:text="${p.admin_graphql_api_id}">admin_graphql_api_id</td>
+				
+					<td th:text="${p.image.id}">Image Id</td>
+					<td th:text="${p.image.product_id}">Product Id</td>
+					<td><img  th:src="${p.image.src}" />Src
+						<td>
+
+				</tr>
+
+
+			</tbody>
+		</table>
+
+	</div>
+	<div class="container">
+		<h1 class="text-center">Products</h1>
+		<span th:each="p : ${product}">
+
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<td scope="col">ID</td>
+						<td scope="col">product_id</td>
+						<td scope="col">title</td>
+						<td scope="col">price</td>
+						<td scope="col">sku</td>
+						<td scope="col">position</td>
+						<td scope="col">inventory_policy</td>
+						<td scope="col">compare_at_price</td>
+						<td scope="col">fulfillment_service</td>
+						<td scope="col">inventory_management</td>
+						<td scope="col">option1</td>
+						<td scope="col">option2</td>
+						<td scope="col">option3</td>
+						<td scope="col">created_at</td>
+						<td scope="col">updated_at</td>
+						<td scope="col">taxable</td>
+						<td scope="col">barcode</td>
+						<td scope="col">grams</td>
+						<td scope="col">image_id</td>
+						<td scope="col">weight</td>
+						<td scope="col">weight_unit</td>
+						<td scope="col">inventory_item_id</td>
+						<td scope="col">inventory_quantity</td>
+						<td scope="col">old_inventory_quantity</td>
+						<td scope="col">requires_shipping</td>
+						<td scope="col">admin_graphql_api_id</td>
+
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="v :${p.variants}">
+						<td th:text="${v.id}">ID</td>
+						<td th:text="${v.product_id}">product_id</td>
+						<td th:text="${v.title}">title</td>
+						<td th:text="${v.price}">price</td>
+						<td th:text="${v.sku}">sku</td>
+						<td th:text="${v.position}">position</td>
+						<td th:text="${v.inventory_policy}">inventory_policy</td>
+						<td th:text="${v.compare_at_price}">compare_at_price</td>
+						<td th:text="${v.fulfillment_service}">fulfillment_service</td>
+						<td th:text="${v.inventory_management}">inventory_management</td>
+						<td th:text="${v.option1}">option1</td>
+						<td th:text="${v.option2}">option2</td>
+						<td th:text="${v.option3}">option3</td>
+						<td th:text="${v.created_at}">created_at</td>
+						<td th:text="${v.updated_at}">updated_at</td>
+						<td th:text="${v.taxable}">taxable</td>
+						<td th:text="${v.barcode}">barcode</td>
+						<td th:text="${v.grams}">grams</td>
+						<td th:text="${v.image_id}">image_id</td>
+						<td th:text="${v.weight}">weight</td>
+						<td th:text="${v.weight_unit}">weight_unit</td>
+						<td th:text="${v.inventory_item_id}">inventory_item_id</td>
+						<td th:text="${v.inventory_quantity}">inventory_quantity</td>
+						<td th:text="${v.old_inventory_quantity}">old_inventory_quantity</td>
+						<td th:text="${v.requires_shipping}">requires_shipping</td>
+						<td th:text="${v.admin_graphql_api_id}">admin_graphql_api_id</td>
+
+					</tr>
+
+
+
+				</tbody>
+			</table>
+		</span>
+
+
+	</div>
+
+
+	<div class="container">
+		<h1 class="text-center">Options</h1>
+		<span th:each="p : ${product}">
+
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<td scope="col">ID</td>
+						<td scope="col">product_id</td>
+						<td scope="col">name</td>
+						<td scope="col">position</td>
+						<td scope="col">values</td>
+
+
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="o :${p.options}">
+						<td th:text="${o.id}">ID</td>
+						<td th:text="${o.product_id}">product_id</td>
+						<td th:text="${o.name}">name</td>
+						<td th:text="${o.position}">position</td>
+						<td th:text="${o.values}">values</td>
+
+					</tr>
+
+
+
+				</tbody>
+			</table>
+		</span>
+
+		<!-- <tr th:each="v:${product.variants}"> -->
+		<!-- <h1 th:text="${product.variants}">Zipcode</h1>
+		</tr> -->
+
+	</div>
+
+
+	<div class="container">
+		<h1 class="text-center">Images</h1>
+		<span th:each="p : ${product}">
+
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<td scope="col">ID</td>
+						<td scope="col">product_id</td>
+						<td scope="col">position</td>
+						<td scope="col">created_at</td>
+						<td scope="col">updated_at</td>
+						<td scope="col">alt</td>
+						<td scope="col">width</td>
+						<td scope="col">height</td>
+						<td scope="col">image
+						<td>
+						<td scope="col">variant_ids</td>
+						<td scope="col">admin_graphql_api_id</td>
+
+
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="i :${p.images}">
+						<td th:text="${i.id}">ID</td>
+						<td th:text="${i.product_id}">product_id</td>
+						<td th:text="${i.position}">position</td>
+						<td th:text="${i.created_at}">created_at</td>
+						<td th:text="${i.updated_at}">updated_at</td>
+						<td th:text="${i.alt}">alt</td>
+						<td th:text="${i.width}">width</td>
+						<td th:text="${i.height}">height</td>
+						<td><img th:src="${i.src}" />
+						<td>
+						<td th:text="${i.variant_ids}">variant_ids</td>
+						<td th:text="${i.admin_graphql_api_id}">admin_graphql_api_id</td>
+					</tr>
+
+
+
+				</tbody>
+			</table>
+		</span>
+
+		<!-- <tr th:each="v:${product.variants}"> -->
+		<!-- <h1 th:text="${product.variants}">Zipcode</h1>
+		</tr> -->
+
+	</div>
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>
